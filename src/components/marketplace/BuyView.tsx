@@ -216,7 +216,7 @@ export function BuyView() {
               <button key={item.id} onClick={() => setSelectedItem(item)} className="group text-left bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden hover:shadow-xl hover:border-sky-200 dark:hover:border-sky-500/30 transition-all hover:scale-[1.02]">
                 <div className="relative h-44 bg-slate-100 dark:bg-slate-800 overflow-hidden">
                   {item.image_url ? (
-                    <img src={item.image_url} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <img src={item.image_url} alt={item.title} className="w-full h-full object-contain p-2" />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center text-slate-300 dark:text-slate-600"><Icon size={48} /></div>
                   )}
@@ -285,7 +285,7 @@ function ItemDetailModal({ item, allItems, onClose, onSelectItem }: { item: Item
     <Modal open={true} onClose={onClose} title="Item Details" maxWidth="max-w-2xl">
       <div className="space-y-5">
         <div className="rounded-xl overflow-hidden bg-slate-100 dark:bg-slate-800 h-56">
-          {item.image_url ? <img src={item.image_url} alt={item.title} className="w-full h-full object-cover" /> : <div className="w-full h-full flex items-center justify-center text-slate-300 dark:text-slate-600"><Icon size={64} /></div>}
+          {item.image_url ? <img src={item.image_url} alt={item.title} className="w-full h-full object-contain p-2" /> : <div className="w-full h-full flex items-center justify-center text-slate-300 dark:text-slate-600"><Icon size={64} /></div>}
         </div>
         <div>
           <div className="flex items-start justify-between gap-3">
@@ -331,7 +331,7 @@ function ItemDetailModal({ item, allItems, onClose, onSelectItem }: { item: Item
                 return (
                   <button key={rec.id} onClick={() => onSelectItem(rec)} className="text-left group">
                     <div className="h-20 rounded-lg overflow-hidden bg-slate-100 dark:bg-slate-800 mb-1.5">
-                      {rec.image_url ? <img src={rec.image_url} alt={rec.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform" /> : <div className="w-full h-full flex items-center justify-center text-slate-300 dark:text-slate-600"><RecIcon size={24} /></div>}
+                      {rec.image_url ? <img src={rec.image_url} alt={rec.title} className="w-full h-full object-contain p-1" /> : <div className="w-full h-full flex items-center justify-center text-slate-300 dark:text-slate-600"><RecIcon size={24} /></div>}
                     </div>
                     <p className="text-xs font-medium text-slate-700 dark:text-slate-200 line-clamp-1">{rec.title}</p>
                     <p className="text-xs font-bold text-sky-600 dark:text-sky-400">₹{rec.price}</p>
